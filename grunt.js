@@ -1,4 +1,3 @@
-var path = require( "path" );
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -26,7 +25,7 @@ module.exports = function(grunt) {
             strip = new RegExp( "^" + grunt.template.process( strip, grunt.config() ).replace( /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" ) );
         }
         files.forEach(function( fileName ) {
-            var targetFile = strip ? fileName.replace( strip, "" ) : fileName.replace( /src/ , 'jorbtwelve' )
+            var targetFile = strip ? fileName.replace( strip, "" ) : fileName.replace( /src/ , 'jorbtwelve'); 
             copyFile( fileName, target + targetFile );
         });
         grunt.log.writeln( "Copied " + files.length + " files." );
@@ -52,10 +51,10 @@ module.exports = function(grunt) {
         'Aaron Jorbin; Licensed GPLv2+ */'
     },
     files: {
-        dist: "<%= meta.version %>",
+        dist: "<%= meta.version %>"
     },
     lint: {
-      files: [ 'src/**/*.js']
+      files: ['grunt.js', 'src/**/*.js']
     },
     concat: {
       dist: {
@@ -77,7 +76,7 @@ module.exports = function(grunt) {
         dist:{
             src: ['build/js/app.min.js', 'src/**.php', 'src/style.css', 'src/img/**.svg'],
             renames : {
-                'build/js/app.min.js' : 'jorbtwelve/js/app.min.js',
+                'build/js/app.min.js' : 'jorbtwelve/js/app.min.js'
             },
             dest: "dist/<%= files.dist %>"
         }
