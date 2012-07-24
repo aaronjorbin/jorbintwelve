@@ -58,7 +58,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dist: {
-        src: ['<banner:meta.banner>', '<file_strip_banner:src/js/app.js>'],
+        src: ['<banner:meta.banner>', '<file_strip_banner:src/js/fittext.js>', '<file_strip_banner:src/js/app.js>'],
         dest: 'dist/js/app.js'
       }
     },
